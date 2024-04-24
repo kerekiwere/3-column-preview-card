@@ -1,0 +1,116 @@
+@import url('reset.css');
+
+/* =============== Global Variables =============== */
+:root {
+  /* Primary Colors */
+  --clr-bright-orange: hsl(31, 77%, 52%);
+  --clr-dark-cyan: hsl(184, 100%, 22%);
+  --clr-very-dark-cyan: hsl(179, 100%, 13%);
+
+  /* Neutral Colors */
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-transparent-white: hsla(0, 0%, 100%, 0.75);
+  --clr-very-light-gray: hsl(0, 0%, 95%);
+
+  /* Typography */
+  --ff-primary: 'Lexend Deca', sans-serif;
+  --ff-secondary: 'Big Shoulders Display', sans-serif;
+  --fs-body: 15px;
+  --fs-h2: 2.5rem;
+
+  /* Spacing */
+  --spacing-sm: 1em;
+  --spacing-md: 3em;
+  --spacing-lg: 4em;
+}
+
+/* =============== Global Styles =============== */
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  background: var(--clr-very-light-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  font-family: var(--ff-secondary);
+  font-size: var(--fs-h2);
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+/* =============== Reusable Classes =============== */
+.container {
+  width: 100%;
+  max-width: 950px;
+  padding: var(--spacing-sm);
+  margin: 0 auto;
+}
+
+.orange {
+  background: var(--clr-bright-orange);
+  --current-background: var(--clr-bright-orange);
+}
+
+.cyan {
+  background: var(--clr-dark-cyan);
+  --current-background: var(--clr-dark-cyan);
+}
+
+.dark-cyan {
+  background: var(--clr-very-dark-cyan);
+  --current-background: var(--clr-very-dark-cyan);
+}
+
+
+/* =============== Cards Section =============== */
+.cards {
+  border-radius: 0.5em;
+  overflow: hidden;
+}
+
+.card {
+  width: 100%;
+  padding: var(--spacing-md);
+  color: var(--clr-white);
+
+  & p {
+    color: var(--clr-transparent-white);
+  }
+}
+
+.card__button {
+  display: inline-block;
+  padding: 1em 2em;
+  margin-top: 2em;
+  border-radius: 2em;
+  background: var(--clr-white);
+  color: var(--current-background);
+  text-decoration: none;
+}
+
+.card__button:hover,
+.card__button:focus {
+  background: transparent;
+  color: var(--clr-white);
+  outline: 2px solid var(--clr-white);
+}
+
+/* =============== Media Queries =============== */
+
+@media only screen and (min-width: 800px) {
+  .cards {
+    display: flex;
+  }
+
+  .card__button {
+    margin-top: 5em;
+  }
+}
